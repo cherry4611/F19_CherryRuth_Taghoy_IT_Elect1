@@ -1,20 +1,25 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { View, Button, StyleSheet } from 'react-native';
 
-export default function ColorChangerApp() {
+const ColorChangerApp = () => {
+  const [backgroundColor, setBackgroundColor] = useState('black');
+
   return (
-    <View style={styles.container}>
-      <Text>Welcome to React Native</Text>
-      <Text>ColorChangerApp</Text>
+    <View style={[styles.container, { backgroundColor }]}>
+      <Button title="Default (White)" onPress={() => setBackgroundColor('white')} />
+      <Button title="Light Blue" onPress={() => setBackgroundColor('lightblue')} />
+      <Button title="Light Green" onPress={() => setBackgroundColor('lightgreen')} />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
+    alignItems: 'center',
   },
 });
+
+export default ColorChangerApp;
+
