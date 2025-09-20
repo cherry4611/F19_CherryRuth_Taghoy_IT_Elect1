@@ -1,20 +1,13 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import CounterApp from '../CounterApp';
+import React from "react";
+import ColorChanger from "./ColorChanger";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Cherry Ruth A. Taghoy</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+      <ColorChanger />
+      <CounterApp />
+
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
